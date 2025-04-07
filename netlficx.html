@@ -1,0 +1,643 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NEtdflix</title>
+  <link rel="icon" href="netflixlogo.png" type="image/x-icon"/>
+  <script src="https://kit.fontawesome.com/b47870425f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+  <style>
+    * {
+      background-color: black;
+      box-sizing: border-box;
+    }
+    .logo {
+      width: 135px;
+      height: 45px;
+      margin-top: 20px;
+      margin-left: 30px;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .top-thingy {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+    }
+    .nav-items {
+      color: white;
+      border: none;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .nav-items:hover {
+      cursor: pointer;
+      color: red;
+    }
+    .right-stuff {
+      margin-top: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+    .profile_icon {
+      width: 30px;
+      height: 30px;
+    }
+    .icons {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .icons:hover {
+      cursor: pointer;
+    }
+    .search {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    .cover {
+      min-width: 250px;
+      height: 140px;
+      margin: 3px;
+      border-radius: 10px;
+    }
+    .cover:hover {
+      cursor: pointer;
+    }
+    .category {
+      font-size: 15px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-left: 10px;
+      margin-bottom: 8px;
+    }
+    .row-container {
+      overflow-x: scroll;
+      display: flex;
+      margin-bottom: 40px;
+      gap: 10px;
+    }
+    .first-row {
+      margin-top: 40px;
+    }
+    .game {
+      min-width: 200px;
+      height: 200px;
+      border-radius: 35px;
+      margin-left: 3px;
+      margin-right: 3px;
+    }
+    .game-title {
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 500;
+      color: white;
+      margin-left: 10px;
+    }
+    .game:hover {
+      cursor: pointer;
+    }
+
+    .movie-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .star-rating {
+      direction: rtl;
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 25px;
+      color: #444;
+      padding: 0 3px;
+      transition: transform 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .star-rating input:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: gold;
+      transform: scale(1.2);
+    }
+
+    .star-rating .selected {
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top-thingy">
+    <img src="Logonetflix2.png" alt="logo" class="logo">
+    <div class="container">
+      <div class="nav-items-container">
+        <button class="nav-items">Home</button>
+        <button class="nav-items">TV Shows</button>
+        <button class="nav-items">Movies</button>
+        <button class="nav-items">New & Popular</button>
+        <button class="nav-items">My List</button>
+        <button class="nav-items">Browse by Languages</button>
+      </div>
+    </div>
+    <div class="right-stuff">
+      <div class="search"><i class="fa-regular fa-magnifying-glass fa-2x"></i></div>
+      <div class="icons"><i class="fa-regular fa-bell fa-2x"></i></div>
+      <div class="icons"><img src="profile_icon.jpeg" alt="" class="profile_icon"></div>
+      <div class="icons"><i class="fa-solid fa-caret-down"></i></div>
+    </div>
+  </header>
+
+  <div class="first-row">
+    <p class="category">Continue Watching</p>
+    <div class="row-container">
+      <div class="movie-item">
+        <img src="ihaveadream.png" alt="" class="cover">
+        <div class="star-rating">
+          <input type="radio" id="ihave5" name="ihave" value="5"><label for="ihave5">★</label>
+          <input type="radio" id="ihave4" name="ihave" value="4"><label for="ihave4">★</label>
+          <input type="radio" id="ihave3" name="ihave" value="3"><label for="ihave3">★</label>
+          <input type="radio" id="ihave2" name="ihave" value="2"><label for="ihave2">★</label>
+          <input type="radio" id="ihave1" name="ihave" value="1"><label for="ihave1">★</label>
+        </div>
+      </div>
+      <div class="movie-item">
+        <img src="pico.gif" alt="" class="cover">
+        <div class="star-rating">
+          <input type="radio" id="pico5" name="pico" value="5"><label for="pico5">★</label>
+          <input type="radio" id="pico4" name="pico" value="4"><label for="pico4">★</label>
+          <input type="radio" id="pico3" name="pico" value="3"><label for="pico3">★</label>
+          <input type="radio" id="pico2" name="pico" value="2"><label for="pico2">★</label>
+          <input type="radio" id="pico1" name="pico" value="1"><label for="pico1">★</label>
+        </div>
+      </div>
+      Add more movie-item divs as needed -->
+    <!-- </div>
+  </div> -->
+
+  <!-- Rest of your existing rows (second-row, games, etc.) stay the same -->
+
+  <!-- <script>
+    document.querySelectorAll('.star-rating input').forEach(input => {
+      input.addEventListener('change', function() {
+        const labels = this.parentElement.querySelectorAll('label');
+        labels.forEach(label => label.classList.remove('selected'));
+        this.parentElement.querySelector(`label[for="${this.id}"]`).classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEtdflix</title>
+    <link rel="icon" href="netflixlogo.png" type="image/x-icon"/>
+    <script src="https://kit.fontawesome.com/b47870425f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        *{
+            background-color: black;
+        }
+        .logo{
+            width: 135px;
+            height: 45px;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .top-thingy{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
+        .nav-items{
+            color: white;
+            border: none;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .nav-items:hover{
+            cursor: pointer;
+            color: red;
+            text-decoration: magenta;
+        }
+        .right-stuff{
+            margin-top: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-left: 285px;
+        }
+        .profile_icon{
+            width: 30px;
+            height: 30px;
+        }
+        .icons{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .icons:hover{
+            cursor: pointer;
+        }
+        .search{
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .cover{
+            min-width: 250px;
+            height: 140px;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        .cover:hover{
+            cursor: pointer;
+        }
+        .category{
+            font-size: 15px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 10px;
+            margin-bottom: 8px;
+        }
+        .row-container{
+            overflow-x: scroll;
+            display: flex;
+            margin-bottom: 40px;
+        }
+        .first-row{
+            margin-top: 40px;
+        }
+        .game{
+            min-width: 200px;
+            height: 200px;
+            border-radius: 35px;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        .game-title{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            color: white;
+            margin-left: 10px;
+        }
+        .game:hover{
+            cursor: pointer;
+        }
+        .rating{
+            direction:rtl;
+            display: inline-block;
+            font-size: 2rem;
+        }
+        .rating input{
+            display: none;
+        }
+        .rating label{
+            cursor: pointer;
+            color: #ddd;
+        }
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: #fc0;
+        }
+        .movie-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .star-rating {
+          direction: rtl;
+         display: flex;
+         justify-content: center;
+         margin-top: 8px;
+        }
+
+        .star-rating input {
+        display: none;
+        }
+
+        .star-rating label {
+        font-size: 25px;
+        color: #444;
+        padding: 0 3px;
+        transition: transform 0.2s ease, color 0.2s ease;
+        cursor: pointer;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+        color: gold;
+        transform: scale(1.2);
+        }
+
+        .star-rating .selected {
+        animation: pop 0.3s ease;
+        }
+
+        @keyframes pop {
+         0% { transform: scale(1); }
+        50% { transform: scale(1.5); }
+        100% { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="top-thingy">
+        <img src="Logonetflix2.png" alt="logo" class="logo">
+
+        <div class="container">
+            <div class="nav-items-container">
+                 <button class="nav-items">
+                Home
+                </button>
+                <button class="nav-items">
+                TV Shows
+                </button>
+                <button class="nav-items">
+                Movies
+                </button>
+                <button class="nav-items">
+                New & Popular
+                </button>
+                <button class="nav-items">
+                My List
+                </button>
+                <button class="nav-items">
+                Browse by Languages
+                </button>
+            </div>
+        </div>
+        <div class="right-stuff">
+            <div class="search">
+                <i class="fa-regular fa-magnifying-glass fa-2x"></i>
+            </div>
+            <div class="icons">
+                <i class="fa-regular fa-bell fa-2x"></i>
+            </div>
+            <div class="icons">
+                <img src="profile_icon.jpeg" alt="" class="profile_icon">
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            
+        </div>
+    </header>
+    <div class="first-row">
+        <p class="category">Continue Watching</p>
+        <div class="row-container">
+            <div class="movie-item">
+                <img src="ihaveadream.png" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="ihave5" name="ihave" value="5"><label for="ihave5">★</label>
+                    <input type="radio" id="ihave4" name="ihave" value="4"><label for="ihave4">★</label>
+                    <input type="radio" id="ihave3" name="ihave" value="3"><label for="ihave3">★</label>
+                    <input type="radio" id="ihave2" name="ihave" value="2"><label for="ihave2">★</label>
+                    <input type="radio" id="ihave1" name="ihave" value="1"><label for="ihave1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="pico.gif" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="pico5" name="pico" value="5"><label for="pico5">★</label>
+                    <input type="radio" id="pico4" name="pico" value="4"><label for="pico4">★</label>
+                    <input type="radio" id="pico3" name="pico" value="3"><label for="pico3">★</label>
+                    <input type="radio" id="pico2" name="pico" value="2"><label for="pico2">★</label>
+                    <input type="radio" id="pico1" name="pico" value="1"><label for="pico1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="SPOILER_IMG_20241026_211236018.jpg" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="ihav5" name="ihav" value="5"><label for="ihav5">★</label>
+                    <input type="radio" id="ihav4" name="ihav" value="4"><label for="ihav4">★</label>
+                    <input type="radio" id="ihav3" name="ihav" value="3"><label for="ihav3">★</label>
+                    <input type="radio" id="ihav2" name="ihav" value="2"><label for="ihav2">★</label>
+                    <input type="radio" id="ihav1" name="ihav" value="1"><label for="ihav1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="You.png" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="iha5" name="iha" value="5"><label for="iha5">★</label>
+                    <input type="radio" id="iha4" name="iha" value="4"><label for="iha4">★</label>
+                    <input type="radio" id="iha3" name="iha" value="3"><label for="iha3">★</label>
+                    <input type="radio" id="iha2" name="iha" value="2"><label for="iha2">★</label>
+                    <input type="radio" id="iha1" name="iha" value="1"><label for="iha1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="dexter.png" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="ih5" name="ih" value="5"><label for="ih5">★</label>
+                    <input type="radio" id="ih4" name="ih" value="4"><label for="ih4">★</label>
+                    <input type="radio" id="ih3" name="ih" value="3"><label for="ih3">★</label>
+                    <input type="radio" id="ih2" name="ih" value="2"><label for="ih2">★</label>
+                    <input type="radio" id="ih1" name="ih" value="1"><label for="ih1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="minecraftmovie.jpeg" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="i5" name="i" value="5"><label for="i5">★</label>
+                    <input type="radio" id="i4" name="i" value="4"><label for="i4">★</label>
+                    <input type="radio" id="i3" name="i" value="3"><label for="i3">★</label>
+                    <input type="radio" id="i2" name="i" value="2"><label for="i2">★</label>
+                    <input type="radio" id="i1" name="i" value="1"><label for="i1">★</label>
+                  </div>
+            </div>
+            <div class="movie-item">
+                <img src="skibiditoilet.jpeg" alt="" class="cover">
+                <div class="star-rating">
+                    <input type="radio" id="a5" name="a" value="5"><label for="a5">★</label>
+                    <input type="radio" id="a4" name="a" value="4"><label for="a4">★</label>
+                    <input type="radio" id="a3" name="a" value="3"><label for="a3">★</label>
+                    <input type="radio" id="a2" name="a" value="2"><label for="a2">★</label>
+                    <input type="radio" id="a1" name="a" value="1"><label for="a1">★</label>
+                  </div>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    <div class="second-row">
+        <p class="category">Because you spit on that thang</p>
+        <div class="row-container">
+          <div class="movie-item">
+            <img src="Transformers-2007.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="b5" name="b" value="5"><label for="b5">★</label>
+              <input type="radio" id="b4" name="b" value="4"><label for="b4">★</label>
+              <input type="radio" id="b3" name="b" value="3"><label for="b3">★</label>
+              <input type="radio" id="b2" name="b" value="2"><label for="b2">★</label>
+              <input type="radio" id="b1" name="b" value="1"><label for="b1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="sawmov.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="c5" name="c" value="5"><label for="c5">★</label>
+              <input type="radio" id="c4" name="c" value="4"><label for="c4">★</label>
+              <input type="radio" id="c3" name="c" value="3"><label for="c3">★</label>
+              <input type="radio" id="c2" name="c" value="2"><label for="c2">★</label>
+              <input type="radio" id="c1" name="c" value="1"><label for="c1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="hulktuah.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="d5" name="d" value="5"><label for="d5">★</label>
+              <input type="radio" id="d4" name="d" value="4"><label for="d4">★</label>
+              <input type="radio" id="d3" name="d" value="3"><label for="d3">★</label>
+              <input type="radio" id="d2" name="d" value="2"><label for="d2">★</label>
+              <input type="radio" id="d1" name="d" value="1"><label for="d1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="John-Wick_Chapter-4.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="e5" name="e" value="5"><label for="e5">★</label>
+              <input type="radio" id="e4" name="e" value="4"><label for="e4">★</label>
+              <input type="radio" id="e3" name="e" value="3"><label for="e3">★</label>
+              <input type="radio" id="e2" name="e" value="2"><label for="e2">★</label>
+              <input type="radio" id="e1" name="e" value="1"><label for="e1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="redoofhealr.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="f5" name="f" value="5"><label for="f5">★</label>
+              <input type="radio" id="f4" name="f" value="4"><label for="f4">★</label>
+              <input type="radio" id="f3" name="f" value="3"><label for="f3">★</label>
+              <input type="radio" id="f2" name="f" value="2"><label for="f2">★</label>
+              <input type="radio" id="f1" name="f" value="1"><label for="f1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="invincivle.webp" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="h5" name="h" value="5"><label for="h5">★</label>
+              <input type="radio" id="h4" name="h" value="4"><label for="h4">★</label>
+              <input type="radio" id="h3" name="h" value="3"><label for="h3">★</label>
+              <input type="radio" id="h2" name="h" value="2"><label for="h2">★</label>
+              <input type="radio" id="h1" name="h" value="1"><label for="h1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="avatar.png" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="j5" name="j" value="5"><label for="j5">★</label>
+              <input type="radio" id="j4" name="j" value="4"><label for="j4">★</label>
+              <input type="radio" id="j3" name="j" value="3"><label for="j3">★</label>
+              <input type="radio" id="j2" name="j" value="2"><label for="j2">★</label>
+              <input type="radio" id="j1" name="j" value="1"><label for="j1">★</label>
+            </div>
+          </div>
+          <div class="movie-item">
+            <img src="madame web.jpeg" alt="" class="cover">
+            <div class="star-rating">
+              <input type="radio" id="k5" name="k" value="5"><label for="k5">★</label>
+              <input type="radio" id="k4" name="k" value="4"><label for="k4">★</label>
+              <input type="radio" id="k3" name="k" value="3"><label for="k3">★</label>
+              <input type="radio" id="k2" name="k" value="2"><label for="k2">★</label>
+              <input type="radio" id="k1" name="k" value="1"><label for="k1">★</label>
+            </div>
+          </div>
+        
+            
+        </div>
+        
+    </div>
+        <p class="category">Popular Mobile Games for You</p>
+    <div class=row-container>
+        <div>
+            <img src="r6.jpeg" alt="" class="game">
+            <p class="game-title">Rainbow 6 Siege</p>
+        </div>
+        <div>
+            <img src="mclogo2.png" alt="" class="game">
+            <p class="game-title">Minecraft</p>
+        </div>
+        <div>
+            <img src="fnlogo.png" alt="" class="game">
+            <p class="game-title">Fortnite</p>
+        </div>
+        <div>
+            <img src="robloxlogo.png" alt="" class="game">
+            <p class="game-title">Roblox</p>
+        </div>
+        <div>
+            <img src="coclogo.png" alt="" class="game">
+            <p class="game-title">Clash of Clans</p>
+        </div>
+        <div>
+            <img src="subwaysurfer.png" alt="" class="game">
+            <p class="game-title">Subway Surfer</p>
+        </div>
+        <div>
+            <img src="CandyCrushSaga.png" alt="" class="game">
+            <p class="game-title">Candy Crush Saga</p>
+        </div>
+        <div>
+            <img src="slither.webp" alt="" class="game">
+            <p class="game-title">Slither.io</p>
+        </div>
+        <div>
+            <img src="cuttherope.png" alt="" class="game">
+            <p class="game-title">Cut the Rope</p>
+            
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.star-rating input').forEach(input => {
+          input.addEventListener('change', function() {
+            const labels = this.parentElement.querySelectorAll('label');
+            labels.forEach(label => label.classList.remove('selected'));
+            this.parentElement.querySelector(`label[for="${this.id}"]`).classList.add('selected');
+          });
+        });
+    </script>
+</body>
+</html>

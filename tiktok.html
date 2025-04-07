@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiktok</title>
+    <link rel="icon" href="tiktoklogo2.jpeg" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <script src="https://kit.fontawesome.com/b47870425f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            color: black;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+        .header{
+            display: flex;
+            /* justify-content: space-between; */
+            padding:20px;
+            flex-direction: column;
+            /*width:100%;*/
+        }
+        .logo{
+            width: 120px;
+            height: 35px;
+        }
+        .nav-items-container{
+            display: flex;
+            align-items: center;
+        }
+        .nav-items{
+            padding-left:15px;
+            padding-right:15px ;
+            margin-left: 10px;
+            margin-right:10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 45px;
+        }
+        .nav-items:hover{
+            background-color: rgb(221, 221, 221);
+            cursor: pointer;
+        }
+        .nav-items-black{
+            padding-left:15px;
+            padding-right:15px ;
+            margin-left: 10px;
+            margin-right:10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            height: 45px;
+            background-color: black;
+            color: white;
+        }
+        .nav-items-black:hover{
+            background-color: rgb(241, 241, 242);
+            color: black;
+            cursor: pointer;
+        }
+        .right-container{
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+        .video{
+            width: 300px;
+            height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        .video-container{
+            padding-top: 25px;
+            display: flex;
+        }
+        .single-vid-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .avatar-container{
+            margin-top: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .avatar{
+            width: 35px;
+            height: 35px;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+        .search-bar{
+            background-color: rgb(241, 241, 242);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+            margin-top: 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            color: gray;
+            cursor: pointer;
+        }
+        .box{
+            background-color: rgb(241, 241, 242);
+            border: none;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+        .box:focus{
+            outline: none;
+        }
+        .box::placeholder{
+            color: rgb(160, 160, 160);
+            letter-spacing: .5px;
+        }
+        .icon-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .icon-row{
+            display: flex;
+            align-items: center;
+        }
+        .btn{
+            border: none;
+            background-color:white ;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .icon-text{
+            padding: 2px 10px;
+            font-size: 16px;
+        }
+        .icon-row:hover{
+            color: rgb(234, 68, 90);
+            cursor: pointer;
+        }
+        .login{
+            border-radius: 8px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgb(234, 68, 90);
+            border: none;
+            display: flex;
+            justify-content: center;
+            color: white;
+            margin-right: 10px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        .login-row{
+            display: flex;
+            align-items: center;
+        }
+        .login:hover{
+            cursor: pointer;
+            background-color: rgb(217, 64, 84);
+        }
+        .line-thingy{
+            margin-right: 10px;
+        }
+        .stuff{
+            margin-top: 10px;
+            margin-bottom:10px;
+            font-size:14px;
+            font-weight:600;
+            color: gray;
+        }
+        .hawk-tuah{
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="tiktok.png" alt="logo" class="logo">
+            <div class="search-bar">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+                <input type="text" placeholder="Search" class="box">
+
+            </div>
+            <div class="icon-container">
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-house fa-2x"></i>
+                        <p class="icon-text">For You</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-compass fa-2x"></i>
+                        <p class="icon-text">Explore</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-user-check fa-2x"></i>
+                        <p class="icon-text">Followiung</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-square-plus fa-2x"></i>
+                        <p class="icon-text">Upload</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-video-plus fa-2x"></i>
+                        <p class="icon-text">LIVE</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-coin-front fa-2x"></i>
+                        <p class="icon-text">Get COins</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-user fa-2x"></i>
+                        <p class="icon-text">Profile</p>
+                    </div>
+                </button>
+                <button class="btn">
+                    <div class="icon-row">
+                        <i class="fa-regular fa-ellipsis fa-2x"></i>
+                        <p class="icon-text">Mas</p>
+                    </div>
+                </button>
+                <button class="login">
+                    <div class="login-row">
+                        <p class="icon-text">Log in</p>
+                    </div>
+                </button>
+               <hr class="line-thingy">
+               <div>
+                    <p class="stuff">Company</p>
+                    <p class="stuff">Program</p>
+                    <p class="stuff">Terms & Policies</p>
+                    <p class="hawk-tuah">© hawk tuah 2024 - ∞</p>
+               </div>
+               
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="nav-items-container">
+                <button class="nav-items-black">
+                    All
+                </button>
+                <button class="nav-items">
+                    Singing and Dancing
+                </button>
+                <button class="nav-items">
+                    Spitting
+                </button>
+                <button class="nav-items">
+                    Comedy
+                </button>
+                <button class="nav-items">
+                    Oiled up Men
+                </button>
+                <button class="nav-items">
+                    Relationship
+                </button>
+                <button class="nav-items">
+                    shows
+                </button>
+                <button class="nav-items">
+                    lip since
+                </button>
+            </div>
+            <div class="video-container">
+                <div class="single-vid-container">
+                    <video class="video" muted autoplay loop>
+                        <source src="jojo.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-container">
+                        <img class="avatar" src="allmight.jpeg" alt="">
+                        <p>JonathansC*mSock</p>
+                    </div>
+                </div>
+                <div class="single-vid-container">
+                    <video class="video" muted autoplay loop>
+                        <source src="jellybeans.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-container">
+                        <img class="avatar" src="dekuxkacchan.jpeg" alt="">
+                        <p>Almiimgigngth</p>
+                    </div>
+                </div>
+                <div class="single-vid-container">
+                    <video class="video" muted autoplay loop >
+                        <source src="epik.mp4" type="video/mp4">
+                    </video>
+                    <div class="avatar-container">
+                        <img class="avatar" src="chester.jpeg" alt="">
+                        <p>ChesterIsBack</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>        
+    </div>
+    
+</body>
+</html>

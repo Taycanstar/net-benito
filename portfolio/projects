@@ -1,0 +1,66 @@
+    .movie-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .star-rating {
+      direction: rtl;
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 25px;
+      color: #444;
+      padding: 0 3px;
+      transition: transform 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .star-rating input:checked ~ label,
+    .star-rating label:hover,
+    .star-rating label:hover ~ label {
+      color: gold;
+      transform: scale(1.2);
+    }
+
+    .star-rating .selected {
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+      100% { transform: scale(1); }
+    }
+
+
+
+
+
+        <div class="star-rating">
+          <input type="radio" id="ihave5" name="ihave" value="5"><label for="ihave5">★</label>
+          <input type="radio" id="ihave4" name="ihave" value="4"><label for="ihave4">★</label>
+          <input type="radio" id="ihave3" name="ihave" value="3"><label for="ihave3">★</label>
+          <input type="radio" id="ihave2" name="ihave" value="2"><label for="ihave2">★</label>
+          <input type="radio" id="ihave1" name="ihave" value="1"><label for="ihave1">★</label>
+        </div>
+
+
+<script>
+    document.querySelectorAll('.star-rating input').forEach(input => {
+      input.addEventListener('change', function() {
+        const labels = this.parentElement.querySelectorAll('label');
+        labels.forEach(label => label.classList.remove('selected'));
+        this.parentElement.querySelector(`label[for="${this.id}"]`).classList.add('selected');
+      });
+    });
+</script>
+
+
